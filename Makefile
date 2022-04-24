@@ -21,12 +21,13 @@ dependencies:
 avro-validation:
 	# https://github.com/stedolan/jq/issues/1637#issuecomment-693469750
 	if jq empty user.avsc; 
-		then echo "✅ schéma Avro valide."; 
+		then echo "✅ schéma Avro valide"; 
 	else 
-		echo "❌ schéma Avro invalide.";
+		echo "❌ schéma Avro invalide";
 		return 1;
 	fi
 
 .PHONY: ls-avro  ## 👓 créé le fichier users.avro, puis le lit sur la base du schéma users.avsc
 ls-avro: dependencies avro-validation
+	echo "👓 Contenu de users.avro :"
 	python __main__.py

@@ -1,2 +1,1 @@
 avro==1.11.0
-jsonschema==4.4.0
